@@ -21,7 +21,7 @@ with DAG(
         name="hello-dry-run",
         image="ubuntu:22.04",
         cmds=["bash", "-cx"],
-        arguments=["sleep 600"],
+        arguments=["sleep 10"],
         labels={"foo": "bar"},
         task_id="dry_run_demo",
         get_logs=True,
