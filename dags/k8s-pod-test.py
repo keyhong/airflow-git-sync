@@ -25,6 +25,7 @@ with DAG(
         labels={"foo": "bar"},
         task_id="dry_run_demo",
         get_logs=True,
+        is_delete_operator_pod=True,
         do_xcom_push=True,
     )
 
