@@ -17,15 +17,16 @@ with DAG(
     tags=["example"],
 ) as dag:
 
+from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
+
     k = KubernetesPodOperator(
-        namespace="default",
-        image="ubuntu:22.04",
+        name="hello-dry-run",
+        image="debian",
         cmds=["bash", "-cx"],
         arguments=["echo", "10"],
-        name="airflow-test-pod",
-        task_id="pod_task",
-        get_logs=True,
-        in_cluster=True,
+        labels={"foo": "bar"},
+        task_id="dry_run_demo",
+        do_xcom_push=True,
     )
 
     k
