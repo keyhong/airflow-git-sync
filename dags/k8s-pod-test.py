@@ -25,8 +25,7 @@ with DAG(
         name="airflow-test-pod",
         task_id="pod_task",
         get_logs=True,
-        in_cluster=False,
-        config_file="/home/airflow/.kube/config",
+        in_cluster=True,
     )
 
     k
