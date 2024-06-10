@@ -19,7 +19,7 @@ with DAG(
 
     k = KubernetesPodOperator(
         name="hello-dry-run",
-        image="debian",
+        image="ubuntu:22.04",
         cmds=["bash", "-cx"],
         arguments=["sleep", "600"],
         labels={"foo": "bar"},
