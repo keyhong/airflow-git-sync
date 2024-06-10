@@ -24,6 +24,7 @@ with DAG(
         arguments=["sleep 600"],
         labels={"foo": "bar"},
         task_id="dry_run_demo",
+        get_logs=True,
         do_xcom_push=True,
     )
 
