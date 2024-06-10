@@ -17,8 +17,6 @@ with DAG(
     tags=["example"],
 ) as dag:
 
-from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
-
     k = KubernetesPodOperator(
         name="hello-dry-run",
         image="debian",
